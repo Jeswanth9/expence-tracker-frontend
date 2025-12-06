@@ -1,0 +1,271 @@
+:root {
+  --max-form: 520px;
+}
+
+/* Header */
+.ui-header {
+  padding: 14px 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.ui-header .ui-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 26px;
+}
+
+.title {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Layout */
+.main-grid {
+  display: grid;
+  /* keep the left column sized for the form and let the right column fill remaining space */
+  grid-template-columns: minmax(300px, 480px) 1fr;
+  gap: 36px;
+  /* larger horizontal spacing so panels breathe */
+  padding: 28px 0 36px;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.auth-left h1 {
+  margin: 0 0 8px 0;
+  font-size: 36px;
+  line-height: 1.05;
+}
+
+/* Auth card and forms */
+.auth-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-start;
+  /* align forms to left edge for a cleaner layout */
+}
+
+.auth {
+  width: 100%;
+  max-width: var(--max-form);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* consistent vertical spacing between title, subtle & fields */
+  align-items: stretch;
+}
+
+.form {
+  width: 100%;
+  max-width: var(--max-form);
+}
+
+.form-head h3 {
+  margin: 0 0 4px;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: inherit;
+  min-width: 0;
+  /* allow grid cells to shrink without overflowing */
+}
+
+.field-note {
+  color: #ffb4b4;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.form-status {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.field.amount {
+  grid-column: 1 / span 2;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* Small tweaks for auth left copy + card spacing */
+.auth-left .subtle {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.auth-right .card {
+  width: 100%;
+}
+
+/* Columns spacing helpers */
+.left-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.right-col {
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Summary */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.card.primary {
+  background: linear-gradient(90deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.06));
+  border: 1px solid rgba(124, 92, 255, 0.12);
+}
+
+.card .card-title {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.card .card-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* Expenses list */
+.expenses {
+  margin-top: 6px;
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.expenses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expense-item {
+  list-style: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.expense-item .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.expense-item .row .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.expense-item .meta {
+  flex: 1;
+  text-align: left;
+  margin-left: 6px;
+}
+
+.expense-item .category {
+  font-weight: 700;
+}
+
+.expense-item .description {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.expense-item .amount {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.row-actions {
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.empty {
+  padding: 18px;
+  color: var(--muted);
+  border-radius: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.03);
+}
+
+@media (max-width: 880px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .auth-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 0;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+}
