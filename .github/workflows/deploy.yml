@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.event.repository.name }}:latest
+          tags: ghcr.io/${{ github.repository }}:latest
           build-args: |
             VITE_API_URL=${{ secrets.VITE_API_URL }}
 
