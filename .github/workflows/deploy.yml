@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/expence_tracker_frontend:latest
+          tags: ghcr.io/jeswanth9/expence-tracker-frontend:latest
           build-args: |
             VITE_API_URL=${{ secrets.VITE_API_URL }}
 
